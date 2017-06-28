@@ -68,7 +68,7 @@ func Test_parseSplit(t *testing.T) {
 	}
 }
 
-func BenchmarkRegexp(b *testing.B) {
+func Benchmark_paraseRegexp(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		for _, v := range tests {
 			_, _ = parseRegexp(v.in)
@@ -76,7 +76,7 @@ func BenchmarkRegexp(b *testing.B) {
 	}
 }
 
-func BenchmarkSplit(b *testing.B) {
+func Benchmark_parseSplit(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		for _, v := range tests {
 			_, _ = parseSplit(v.in)
@@ -96,7 +96,7 @@ var tests2 = []struct {
 	{"a12345.example.app", Android},
 }
 
-func BenchmarkAtoi(b *testing.B) {
+func Benchmark_detectAtoi(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		for _, v := range tests2 {
 			if v.kind != detectAtoi(v.in) {
@@ -106,7 +106,7 @@ func BenchmarkAtoi(b *testing.B) {
 	}
 }
 
-func BenchmarkScan(b *testing.B) {
+func Benchmark_detectScan(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		for _, v := range tests2 {
 			if v.kind != detectScan(v.in) {
@@ -116,7 +116,7 @@ func BenchmarkScan(b *testing.B) {
 	}
 }
 
-func BenchmarkBytes(b *testing.B) {
+func Benchmark_detectBytes(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		for _, v := range tests2 {
 			if v.kind != detectBytes(v.in) {
